@@ -1,0 +1,10 @@
+version: '3.5'
+
+services:
+  beex-manager:
+    container_name: beex-manager-container
+    image: registry.gitlab.com/bfernandez.abx/beex.manager.web
+    ports:
+      - "5402:3000"
+      - "5405:4001"
+    restart: always

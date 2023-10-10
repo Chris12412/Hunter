@@ -1,0 +1,77 @@
+.table {
+    width: 100%;
+}
+
+.table tr th {
+    background: #2e5289;
+    color: white;
+    padding-top: 5px !important; /*Era 10 px*/
+    padding-bottom: 5px !important; /*Era 10 px*/
+    /* border-bottom: 1px solid black !important; */
+    font-size: 12px;
+    /* width: 100%; */
+}
+
+.table thead tr {
+    height: 33px;
+}
+
+.table tbody tr {
+    height: 30px;
+}
+
+.table tbody tr:hover {
+    background: #264258!important;
+    cursor: pointer;
+}
+
+.table tbody tr td {
+    font-size: 13px;
+    height: 15px
+    /* border-top: 1px solid #ddd; */
+}
+
+.table thead tr th:hover {
+    cursor: pointer;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #222222;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #121212;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    padding-top: 3px;
+    /* line-height: 1.42857143; */
+    vertical-align: middle;
+    padding-bottom: 0px;
+}
+
+.table thead tr th { 
+    position: sticky!important;
+    top: 0!important;
+    z-index: 10!important;
+    /* border-bottom: 1px solid #000!important; */
+}
+
+.table thead tr:nth-child(2) th { 
+    top: 30px!important;
+}
+
+.contenedor-tabla {
+    height: calc(100% - 48px - 28px);
+    overflow: auto;
+}
+
+
+/* Recargas */
+.form-content > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}

@@ -1,0 +1,579 @@
+.dashboard {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows: 70px 1fr 0px;
+    grid-template-areas: 
+        "header header header"
+        "menu main main"
+        "menu footer footer";
+    background: #003478;
+    transition: all .3s;
+    caret-color: transparent;
+
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+    background: #0d0d0e;
+}
+
+.footer {
+    grid-area: footer;
+    background: #121212;
+}
+
+.menu {
+    transition: all .3s;
+    left: 0px;
+    z-index: 1000;
+}
+
+.menu.active {
+    left: 0px!important;
+}
+
+@media screen and (max-width: 1024px) { 
+    .dashboard {
+        grid-template-areas: 
+            "header header header"
+            "main main main"
+            "footer footer footer";
+        transition: all .3s;
+    }
+
+    .menu {
+        left: -300px;
+    }  
+
+    .menu.active {
+        left: 0px!important;
+    }
+}
+
+.menu >.ul-nav {
+    height: 100%;
+}
+
+.menu.active >.ul-nav {
+    width: 285px!important;
+}
+
+.icon-split {
+    transition: all .3s;
+}
+
+.fondo-negro {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #000;
+    opacity: 0.3;
+}
+
+.ul-nav {
+    width: 285px;
+    padding-bottom: 60px;
+    background-color: #fff;
+    z-index: 999;
+    overflow-y: auto;
+    will-change: transform;
+    backface-visibility: hidden;
+    padding: 0;
+    /* box-shadow: 0px 10px 20px -4px #000; */
+    transition: all .5s;
+}
+
+
+/*acciones li*/
+.ul-nav-li {
+    display: block;
+    user-select: none;
+    list-style: none;
+    /* line-height: 48px; */
+    font-size: .9rem;
+}
+
+.li-nav-div {
+    padding: 0 0rem;
+    line-height: inherit;
+    cursor: pointer;
+    transition: all .3s;
+    height: 36px;
+}
+
+    /* .li-nav-div:hover {
+        background: #DBDBDB;
+        opacity: 1;
+    } */
+
+    .li-nav-div i {
+        width: 1rem;
+        font-size: 1rem;
+        display: inline-block;
+        text-align: center;
+        margin-right: .3rem;
+    }
+/*acciones li*/
+
+.li-nav-div{
+    background: #003478;
+    /* margin-bottom: 5px; */
+    padding: 0 8px!important;
+    /* border-top:#000000 0.1rem solid; */
+    border-top:#000000 0.1rem solid;
+}
+
+
+.li-nav-div-submenu  {
+    background: #272727;
+    /* margin-bottom: 5px; */
+    padding: 0 8px!important;
+}
+
+/*Sub menus*/
+.ul-submenu {
+    padding: 0;
+}
+
+.ul-nav-li-submenu {
+    display: block;
+    list-style: none;
+    /* line-height: 45px; */
+    font-size: .9rem;
+}
+
+.li-nav-div-submenu {
+    padding: 0 0rem;
+    line-height: inherit;
+    cursor: pointer;
+    transition: all .3s;
+    height: 32px;
+    border-top: 4px solid #272727
+}
+
+    /* .li-nav-div-submenu:hover {
+        
+        background :#bbdefb;
+        opacity: 1;
+    } */
+
+    .li-nav-div-submenu i {
+        width: 1rem;
+        font-size: 1rem;
+        display: inline-block;
+        text-align: center;
+        margin-right: .3rem;
+    }
+/*Sub menus*/
+
+/*mostrar submenu*/
+.active-li {
+    background-color: #DBDBDB;
+}
+
+.ul-submenu {
+    border: 0;
+    background-color: #fff;
+    display: block;
+}
+
+.active-submenu {
+    background: #bbdefb;
+}
+
+.nav-link {
+    padding: 0 0 0 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.nav-link.active {
+    color: #cacdf5;
+}
+
+.icon-menu {
+    transition: all 0.5s;
+}
+
+.nav-link.active > div > .icon-menu {
+    transform: rotate(-180deg);
+}
+
+.li-a-submenu.active {
+    background: #25567a;
+    color: #9fc0da;
+    /*border-radius: 4px;*/
+}
+
+.nav-link:hover {
+    /* background: #264258; */
+    background: #383838;
+    color: #fff;
+    /*border-radius: 4px;*/
+}
+
+.nav-link.active:hover {
+    background: #264258;
+    color: #2192eb;
+    /*border-radius: 4px;*/
+}
+
+.text-menu {
+}
+
+.text-sub-menu {
+    padding-left: 20px;
+}
+
+/* CARET DE LOS INPUT */
+.caret-input{
+    cursor:caret;
+    caret-color:white;
+}
+/* TABLE CSS */
+.table {
+    width: 100%;
+}
+
+.table tr th {
+    background: #2e5289;
+    color: white;
+    padding-top: 5px !important; /*Era 10 px*/
+    padding-bottom: 5px !important; /*Era 10 px*/
+    /* border-bottom: 1px solid black !important; */
+    font-size: 12px;
+    /* width: 100%; */
+}
+
+.table thead tr {
+    height: 33px;
+}
+
+.table tbody tr {
+    height: 30px;
+}
+
+.table tbody tr:hover {
+    background: #264258!important;
+    cursor: pointer;
+}
+
+.table tbody tr td {
+    font-size: 13px;
+    height: 15px
+    /* border-top: 1px solid #ddd; */
+}
+
+.table thead tr th:hover {
+    cursor: pointer;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #222222;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #121212;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    padding-top: 3px;
+    /* line-height: 1.42857143; */
+    vertical-align: middle;
+    padding-bottom: 0px;
+}
+
+.table thead tr th { 
+    position: sticky!important;
+    top: 0!important;
+    z-index: 10!important;
+    /* border-bottom: 1px solid #000!important; */
+}
+
+.table thead tr:nth-child(2) th { 
+    top: 30px!important;
+}
+
+.contenedor-tabla {
+    height: calc(100% - 48px - 28px);
+    overflow: auto;
+}
+
+
+/* Recargas */
+.form-content > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+
+/* ESTILO DEL SCROLLBAR  */
+.containerScroll::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;    /* Tamaño del scroll en horizontal */
+    /* display: none;  Ocultar scroll */
+}
+
+.containerScroll::-webkit-scrollbar-thumb {
+    background: #2e5289;
+    /* border-radius: 4px; */
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.containerScroll::-webkit-scrollbar-thumb:hover {
+    background: #5376ac;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.containerScroll::-webkit-scrollbar-thumb:active {
+    background-color: #3e639b;
+}
+.containerScroll::-webkit-scrollbar-track {
+    background: #474545;
+    /* border-radius: 4px; */
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+.containerScroll::-webkit-scrollbar-track:hover,
+.containerScroll::-webkit-scrollbar-track:active {
+    background: #474545;
+}
+ /* PARA DISPOSITIVOS MOBILES */
+@media screen and (max-width: 639px) { 
+    .containerScroll::-webkit-scrollbar {
+        width: 1px;     /* Tamaño del scroll en vertical */
+        height: 0px;    /* Tamaño del scroll en horizontal */
+        /* display: none;  Ocultar scroll */
+    }
+    
+    .containerScroll::-webkit-scrollbar-thumb {
+        background: #2e5289;
+        /* border-radius: 4px; */
+    }
+    
+    /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+    .containerScroll::-webkit-scrollbar-thumb:hover {
+        /* background: #ac5e53; */
+        /* box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2); */
+    }
+    
+    /* Cambiamos el fondo cuando esté en active */
+    .containerScroll::-webkit-scrollbar-thumb:active {
+        /* background-color: #3e639b; */
+    }
+    .containerScroll::-webkit-scrollbar-track {
+        background: #474545;
+        /* border-radius: 4px; */
+    }
+    
+    /* Cambiamos el fondo cuando esté en active o hover */
+    .containerScroll::-webkit-scrollbar-track:hover,
+    .containerScroll::-webkit-scrollbar-track:active {
+        background: #474545;
+    }
+
+}
+
+
+
+
+/* DIV MOIBLE */
+
+.divMovible {
+    position: absolute;
+    z-index: 9;
+}
+
+.divMovibleCabecera {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+}
+
+/* FIN DIV MOBIBLE */
+
+
+/*CARGANDO*/
+
+*{
+box-sizing: border-box;
+}
+.loading{
+width:400px;
+height:400px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:2rem;
+overflow:hidden;
+margin:10px auto;
+position:relative;
+animation: text-color 2s ease-in-out infinite alternate-reverse;
+}
+.spinner-sec{
+position: absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+border: 5px dotted transparent;
+mix-blend-mode: lighten;
+animation: rotate var(--duration) var(--timming) infinite;
+}
+.spin-sec-one{
+border-left-color: lightcoral;
+--duration:2s;
+--timming:ease-in;
+}
+.spin-sec-two{
+    border-top-color: lightblue;
+    --duration:2s;
+    --timming:ease-in-out;
+}
+.spin-sec-three{
+    border-right-color: lightgreen;
+    --duration:2s;
+    --timming:ease-out;
+}
+
+@keyframes rotate{
+0%{
+    transform: rotate(0deg);
+}
+    100%{
+    transform: rotate(360deg);
+}
+}
+@keyframes text-color {
+    0%   {color: rgba(255, 255, 255, 0.8);}
+50%  {color: rgba(255, 255, 255, 0.4);}
+100% {color: rgba(255, 255, 255, 0.2);}
+}
+
+/* FIN CARGANDO */
+
+
+*{
+box-sizing: border-box;
+}
+.loadingT{
+width:250px;
+height:250px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:2rem;
+overflow:hidden;
+margin:10px auto;
+position:relative;
+animation: text-color 2s ease-in-out infinite alternate-reverse;
+}
+.spinner-secT{
+position: absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+border: 5px dotted transparent;
+mix-blend-mode: lighten;
+animation: rotate var(--duration) var(--timming) infinite;
+}
+.spin-sec-oneT{
+border-left-color: rgb(255, 0, 0);
+--duration:2s;
+--timming:ease-in;
+}
+.spin-sec-twoT{
+    border-top-color: rgb(3, 184, 245);
+    --duration:2s;
+    --timming:ease-in-out;
+}
+.spin-sec-threeT{
+    border-right-color: rgb(7, 248, 7);
+    --duration:2s;
+    --timming:ease-out;
+}
+
+@keyframes rotate{
+0%{
+    transform: rotate(0deg);
+}
+    100%{
+    transform: rotate(360deg);
+}
+}
+@keyframes text-color {
+0%   {color: rgba(8, 8, 8, 0.952);}
+50%  {color: rgba(116, 104, 104, 0.705);}
+100% {color: rgba(12, 11, 11, 0.719);}
+}
+
+    /* FIN CARGANDO */
+
+/* SWITCH  */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    outline: none;
+}
+.switch input {
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+

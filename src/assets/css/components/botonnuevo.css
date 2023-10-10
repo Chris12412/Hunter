@@ -1,0 +1,24 @@
+.botonNuevo {
+    background-color: #336fbb;
+    border-radius: 35px;
+    text-align:center;
+    caret-color: transparent;
+    border:1px solid #fff;
+}
+.btn-circle.btn-xl {
+    border-radius: 35px;
+    margin-bottom: 5px;
+}
+.btn-circle {
+    width: auto;
+    height: 35px;
+    padding: 6px 8px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+.botonNuevo:hover{
+    /* background-color: #336fbb; */
+    box-shadow: 0 0 10px 0 rgb(193, 193, 193); 
+}
